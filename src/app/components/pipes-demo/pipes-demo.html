@@ -1,0 +1,102 @@
+<h3 class="text-center">Let's Learn Angular Pipes</h3>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>uppercase, lowercase, titlecase pipe:</h5>
+  <div>myName without any pipe: {{myName}}</div>
+  <div>myName with uppercase any pipe: {{myName | uppercase}}</div>
+  <div>myName with lowercase any pipe: {{myName | lowercase}}</div>
+  <div>myName with titlecase any pipe: {{myName | titlecase}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>currency pipe:</h5>
+  <div>mySal without any pipe: {{mySal}}</div>
+  <div>mySal with currency pipe: {{mySal | currency}}</div>
+  <div>mySal with currency pipe: {{mySal | currency : 'USD' : 'symbol'}}</div>
+  <div>mySal with currency pipe: {{mySal | currency : 'USD' : 'code'}}</div>
+  <div>mySal with currency pipe: {{mySal | currency : 'INR' : 'symbol'}}</div>
+  <!-- input | pipeName : arg-1 : arg-2 -->
+  <div>mySal with currency pipe: {{mySal | currency : '&euro;'}}</div>
+  <div>mySal with currency pipe: {{mySal | currency : '&#x5143;'}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>Date pipe:</h5>
+  <div>{{dateObj}}</div>
+  <div>{{dateObj | date}}</div>
+
+  <div>{{dateObj | date : 'shortDate'}}</div>
+  <div>{{dateObj | date : 'mediumDate'}}</div>
+  <div>{{dateObj | date : 'longDate'}}</div>
+  <div>{{dateObj | date : 'fullDate'}}</div>
+
+  <div>{{dateObj | date : 'shortTime'}}</div>
+  <div>{{dateObj | date : 'mediumTime'}}</div>
+  <div>{{dateObj | date : 'longTime'}}</div>
+  <div>{{dateObj | date : 'fullTime'}}</div>
+
+  <div>{{dateObj | date : 'dd-MMMM-yyyy'}}</div>
+
+  <!-- Pipe Chaining -->
+  <div>{{dateObj | date | lowercase}}</div>
+  <div>{{dateObj | date | uppercase}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>Number and percent pipe:</h5>
+  <div>{{12.11122233 | number:'3.2-5'}}</div>
+  <div>{{ 4.2 | number:'3.2-5'}}</div>
+  <div>{{ 0.7 | percent}}</div>
+  <div>{{ 0.65 | percent}}</div>
+  <div>{{ 0.64 | percent}}</div>
+  <div>{{ 0.064 | percent}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>json pipe:</h5>
+  <div>{{user}}</div>
+  <div>{{user | json}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>keyvalue pipe:</h5>
+  @for(entry of user | keyvalue;track $index){
+  <div>{{entry.key}}---{{entry.value}}</div>
+  }
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>slice pipe:</h5>
+  <div>{{cars | slice : 2 : 4}}</div>
+  <div>{{myName | slice : 2 : 4}}</div>
+  <div>{{myName | slice : 2 : -1}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>async pipe:</h5>
+  <div>{{num | async}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>Salutation(Mr. / Miss.) pipe:</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>empId</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (emp of employees; track $index) {
+      <tr>
+        <td>{{emp.eId}}</td>
+        <td>{{emp.name | salutation : emp.gender}}</td>
+        <td>{{emp.sal}}</td>
+        <td>{{emp.gender}}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

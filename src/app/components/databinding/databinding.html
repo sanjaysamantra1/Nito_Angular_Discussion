@@ -1,0 +1,47 @@
+<h3 class="text-center">Let's Learn Data Binding</h3>
+
+<div class="border border-3 rounded-3 p-3 m-3">
+  <div>My Name is:: {{myName}}</div>
+
+  <div>
+    1 way: <input value="{{myName}}" />
+    1 way: <input [value]="myName" class="mx-2" />
+    1 way: <input bind-value="myName" class="mx-2" />
+  </div>
+  <div>
+    2 way: <input [(ngModel)]="myName" />
+  </div>
+
+  <div class="my-2">
+    <img src="{{img_url}}" width="200" height="200" class="mx-2">
+    <img [src]="img_url" width="200" height="200" class="mx-2">
+    <img bind-src="img_url" width="200" height="200" class="mx-2">
+  </div>
+
+  <div>
+    <button class="btn btn-primary" disabled="{{flag}}">Add To Cart</button>
+    <button class="btn btn-primary mx-2" [disabled]="flag" on-click="addToCart()">Add To Cart</button>
+    <button class="btn btn-primary" bind-disabled="flag" (click)="addToCart()">Add To Cart</button>
+  </div>
+</div>
+
+
+<div class="border border-3 rounded-3 p-3 m-3">
+  <h1>Helloooooooooooooooo</h1>
+  <button class="btn btn-primary">Show/Hide</button>
+</div>
+
+<div class="border border-3 rounded-3 p-3 m-3">
+  <h1>Addition of 2 Numbers using 2-way binding</h1>
+  <input type="number" [(ngModel)]="num1" />
+  <input type="number" [(ngModel)]="num2" />
+  <div>Addition of {{num1}} and {{num2}} is {{num1+num2}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-3 m-3">
+  <h1>Addition of 2 Numbers Template Reference variable</h1>
+  <input type="number" #num3 />
+  <input type="number" ref-num4 />
+  <button class="btn btn-primary" (click)="addition(num3.value , num4.value)">Add</button>
+  <div>Addition result is {{addResult}}</div>
+</div>

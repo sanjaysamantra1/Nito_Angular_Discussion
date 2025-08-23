@@ -1,0 +1,105 @@
+<h3 class="text-center">Let's Learn Directives</h3>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>if & else</div>
+  <input type="number" [(ngModel)]="num">
+  <div *ngIf="num%2 == 0">{{num}} is Even</div>
+  <div *ngIf="num%2 !== 0">{{num}} is Odd</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>if & else</div>
+  <input type="number" [(ngModel)]="num">
+  @if(num %2 ==0){
+  <div>{{num}} is Even</div>
+  }@else {
+  <div>{{num}} is Odd</div>
+  }
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>switch case</div>
+  @switch (num) {
+  @case (1) { <h1>Monday</h1> }
+  @case (2) { <h1>Tuesday</h1> }
+  @case (3) { <h1>Wednesday</h1> }
+  @case (4) { <h1>Thursday</h1> }
+  @case (5) { <h1>Friday</h1> }
+  @case (6) { <h1>Saturday</h1> }
+  @case (7) { <h1>Sunday</h1> }
+  @default { <h1>Not a Valid number</h1> }
+  }
+  <input type="number" [(ngModel)]="num">
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>States List</div>
+
+  <ol>
+    @for (item of statesArr;track $index) {
+    <li>{{item}}</li>
+    }
+  </ol>
+
+  <select>
+    @for (item of statesArr;track $index) {
+    <option>{{item}}</option>
+    }@empty {
+    <option disabled>No Data to display</option>
+    }
+  </select>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>Employee List</div>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>empId</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>Index</th>
+        <th>isFirst?</th>
+        <th>isLast></th>
+        <th>isEven?</th>
+        <th>isOdd?</th>
+        <th>count?</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (emp of employees; track $index) {
+      <tr>
+        <td>{{emp.eId}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.sal}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{$index + 1}}</td>
+        <td>{{$first}}</td>
+        <td>{{$last}}</td>
+        <td>{{$even}}</td>
+        <td>{{$odd}}</td>
+        <td>{{$count}}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>ngStyle and ngClass</div>
+  <input type="number" [(ngModel)]="num" />
+
+  <div [ngStyle]="num%2 ==0 ? style1 : style2">{{num}} is {{num%2==0 ? "Even" : "Odd"}}</div>
+  <button class="btn" [ngClass]="num%2 ==0 ? 'btn-success' : 'btn-danger'">
+    Class Binding example
+  </button>
+
+  <div [ngClass]="num%2 ==0 ? 'myclass1' : 'myclass2'">Hellooooooooooo HIiiiiiiiii</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>Custom Directive(NumberOnly)</div>
+  <input type="text" smartAssistNumberonly />
+</div>
