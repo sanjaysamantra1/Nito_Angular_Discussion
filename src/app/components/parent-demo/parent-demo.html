@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row text-center border border-3">
+    <div>This is Parent Component</div>
+    <div>My own data a is:: {{a}}</div>
+    <div>My child's data b is:: {{child2.b}}</div>
+    <div>My child's data name is:: {{parentName}}</div>
+  </div>
+  <div class="row text-center ">
+    <div class="col-sm-6 border border-3">
+      <smartAssist-child1-demo [a]="a" [b]="child2.b"></smartAssist-child1-demo>
+    </div>
+    <div class="col-sm-6 border border-3">
+      <smartAssist-child2-demo [achild2]="a" (nameEvent)="receiveDataFromChild($event)"
+        #child2></smartAssist-child2-demo>
+    </div>
+  </div>
+</div>

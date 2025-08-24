@@ -100,3 +100,22 @@
     </tbody>
   </table>
 </div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>Remaining Characters pipe:</h5>
+  <div>Salary: <input type="number" [(ngModel)]="mySal" /> </div>
+  <textarea [(ngModel)]="msg"></textarea>
+  <div>Remaining Characters: {{msg | remaining}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <h5>Pure & Impure Pipe:</h5>
+
+  @for (item of arr | mysort; track $index) {
+  <b>{{item}} &nbsp;</b>
+  }
+  <div>
+    <input type="number" #newNum />
+    <button class="btn btn-primary mx-2" (click)="arr.push(+newNum.value)">Add</button>
+  </div>
+</div>

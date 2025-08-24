@@ -2,12 +2,18 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { interval } from 'rxjs';
 import { SalutationPipe } from '../../custom-pipes/salutation-pipe';
+import { FormsModule } from '@angular/forms';
+import { RemainingPipe } from '../../custom-pipes/remaining-pipe';
+import { MysortPipe } from '../../custom-pipes/mysort-pipe';
 
 @Component({
   selector: 'smartAssist-pipes-demo',
   imports: [
     CommonModule,
-    SalutationPipe
+    SalutationPipe,
+    FormsModule,
+    RemainingPipe,
+    MysortPipe
   ],
   templateUrl: './pipes-demo.html',
   styleUrl: './pipes-demo.css'
@@ -16,6 +22,7 @@ export class PipesDemo {
   myName: string = 'Sachin tEnDulKaR';
   mySal: number = 5000;
   dateObj = new Date();
+  msg: string = '';
 
   user = { name: 'Sanjay Kumar', age: 45, add: 'Bangalore' };
   cars = ['Tata', 'Honda', 'Maruti', 'Hyundai', 'Toyota', 'Mahindra'];
@@ -29,4 +36,6 @@ export class PipesDemo {
     { "eId": 102, "name": "sita", "sal": 9000, "gender": "female" },
     { "eId": 105, "name": "deepak", "sal": 8000, "gender": "male" }
   ];
+
+  arr = [20, 50, 10, 60, 30, 40];
 }

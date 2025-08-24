@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Databinding } from '../databinding/databinding';
 import { DirectivesDemo } from '../directives-demo/directives-demo';
 import { PipesDemo } from '../pipes-demo/pipes-demo';
+import { ParentDemo } from '../parent-demo/parent-demo';
 
 @Component({
   selector: 'smartAssist-body',
@@ -10,7 +11,8 @@ import { PipesDemo } from '../pipes-demo/pipes-demo';
     // Databinding
     // DirectivesDemo
     // Users
-    PipesDemo
+    // PipesDemo
+    ParentDemo
   ],
   templateUrl: './body.html',
   styleUrl: './body.css'
