@@ -9,8 +9,8 @@ import { Footer } from "./components/footer/footer";
   selector: 'smartAssist-root',
   imports: [
     Navbar,
-    Categories,
-    Carousel,
+    // Categories,
+    // Carousel,
     Body,
     Footer
 ],

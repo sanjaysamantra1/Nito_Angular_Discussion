@@ -4,6 +4,12 @@
     <div>My own data a is:: {{a}}</div>
     <div>My child's data b is:: {{child2.b}}</div>
     <div>My child's data name is:: {{parentName}}</div>
+    <div>
+      lets change a value: <input type="number" [(ngModel)]='a' #inputBox />
+    </div>
+    <div>
+      <button class="btn btn-primary" (click)="clickHanlder()">Click Me</button>
+    </div>
   </div>
   <div class="row text-center ">
     <div class="col-sm-6 border border-3">
