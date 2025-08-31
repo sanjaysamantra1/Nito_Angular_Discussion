@@ -1,3 +1,4 @@
+import { FormDemo1 } from './../form-demo1/form-demo1';
 import { Users } from './../users/users';
 import { Component } from '@angular/core';
 import { Databinding } from '../databinding/databinding';
@@ -7,6 +8,7 @@ import { ParentDemo } from '../parent-demo/parent-demo';
 import { MathDemo1 } from '../math-demo1/math-demo1';
 import { MathDemo2 } from '../math-demo2/math-demo2';
 import { HttpDemo1 } from '../http-demo1/http-demo1';
+import { FormDemo2 } from '../form-demo2/form-demo2';
 
 @Component({
   selector: 'smartAssist-body',
@@ -18,7 +20,9 @@ import { HttpDemo1 } from '../http-demo1/http-demo1';
     // ParentDemo
     // MathDemo1,
     // MathDemo2
-    HttpDemo1
+    // HttpDemo1
+    // FormDemo1
+    FormDemo2
   ],
   templateUrl: './body.html',
   styleUrl: './body.css'
