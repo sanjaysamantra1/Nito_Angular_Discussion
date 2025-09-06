@@ -9,6 +9,7 @@ import { MathDemo1 } from '../math-demo1/math-demo1';
 import { MathDemo2 } from '../math-demo2/math-demo2';
 import { HttpDemo1 } from '../http-demo1/http-demo1';
 import { FormDemo2 } from '../form-demo2/form-demo2';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'smartAssist-body',
@@ -22,8 +23,9 @@ import { FormDemo2 } from '../form-demo2/form-demo2';
     // MathDemo2
     // HttpDemo1
     // FormDemo1
-    FormDemo2
-  ],
+    // FormDemo2,
+    RouterOutlet
+],
   templateUrl: './body.html',
   styleUrl: './body.css'
 })
