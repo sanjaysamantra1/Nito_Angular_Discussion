@@ -1,8 +1,11 @@
+import { AngularMaterialDemo } from './../angular-material-demo/angular-material-demo';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'smartAssist-home',
-  imports: [],
+  imports: [
+    AngularMaterialDemo
+  ],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
