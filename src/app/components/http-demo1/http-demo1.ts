@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { ADDED_SUCCESSFULLY, TOOLTIP_TEXT } from '../../constants/messages';
 
 @Component({
   selector: 'smartAssist-http-demo1',
@@ -8,39 +9,48 @@ import { Component } from '@angular/core';
   styleUrl: './http-demo1.css'
 })
 export class HttpDemo1 {
-  user_api_url = 'https://jsonplaceholder.typicode.com/users';
-  userArr: any[] = [];
+  users_api_url = 'https://jsonplaceholder.typicode.com/users';
+  tooltiptext: string = TOOLTIP_TEXT;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient) { // Dependency Injection
+
   }
 
   ngOnInit() {
-    this.fetchUsers_javascript();
-    this.fetchUsers_angular();
+    // this.fetchData_javascript();
+    this.fetchData_angular();
+    this.fetchData_angular_2();
   }
-  fetchUsers_javascript() {
-    fetch(this.user_api_url).then(
+
+  fetchData_javascript() {
+    fetch(this.users_api_url).then(
       (response) => {
-        response.json().then(finalResponse => {
-          console.log(finalResponse);
-        })
+        response.json().then(
+          finalResponse => {
+            console.log(finalResponse)
+          }
+        )
       },
       (error) => {
         console.log(error)
       }
     )
   }
-  fetchUsers_angular() {
-    this.httpClient.get(this.user_api_url).subscribe({
-      next: (response) => {
+
+  fetchData_angular() {
+    this.httpClient.get(this.users_api_url).subscribe( // only body
+      response => {
         console.log(response);
-      },
-      error: (err) => {
-        console.log(err);
-      },
-      complete: () => {
-        console.log('all data received');
       }
-    })
+    )
   }
+
+  fetchData_angular_2() {
+    this.httpClient.get(this.users_api_url, { observe: "response" }).subscribe(
+      response => {
+        console.log(response); // body + status text + status code +etc
+      }
+    )
+  }
+
 }

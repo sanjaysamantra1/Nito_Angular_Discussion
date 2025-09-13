@@ -3,14 +3,14 @@
 <div class="border border-3 rounded-3 p-2 m-2">
   <div>if & else</div>
   <input type="number" [(ngModel)]="num">
-  <div *ngIf="num%2 == 0">{{num}} is Even</div>
+  <div *ngIf="num%2 === 0">{{num}} is Even</div>
   <div *ngIf="num%2 !== 0">{{num}} is Odd</div>
 </div>
 
 <div class="border border-3 rounded-3 p-2 m-2">
   <div>if & else</div>
   <input type="number" [(ngModel)]="num">
-  @if(num %2 ==0){
+  @if(num %2 ===0){
   <div>{{num}} is Even</div>
   }@else {
   <div>{{num}} is Odd</div>
@@ -91,12 +91,12 @@
   <div>ngStyle and ngClass</div>
   <input type="number" [(ngModel)]="num" />
 
-  <div [ngStyle]="num%2 ==0 ? style1 : style2">{{num}} is {{num%2==0 ? "Even" : "Odd"}}</div>
-  <button class="btn" [ngClass]="num%2 ==0 ? 'btn-success' : 'btn-danger'">
+  <div [ngStyle]="num%2 ===0 ? style1 : style2">{{num}} is {{num%2===0 ? "Even" : "Odd"}}</div>
+  <button class="btn" [ngClass]="num%2 ===0 ? 'btn-success' : 'btn-danger'">
     Class Binding example
   </button>
 
-  <div [ngClass]="num%2 ==0 ? 'myclass1' : 'myclass2'">Hellooooooooooo HIiiiiiiiii</div>
+  <div [ngClass]="num%2 ===0 ? 'myclass1' : 'myclass2'">Hellooooooooooo HIiiiiiiiii</div>
 </div>
 
 <div class="border border-3 rounded-3 p-2 m-2">
