@@ -6,6 +6,8 @@ import { AngularMaterialDemo } from './../angular-material-demo/angular-material
 import { Component } from '@angular/core';
 import { ObservableDemo2 } from '../observable-demo2/observable-demo2';
 import { SubjectDemo1 } from '../subject-demo1/subject-demo1';
+import { DirectivesDemo } from '../directives-demo/directives-demo';
+import { UserList } from '../user-list/user-list';
 
 @Component({
   selector: 'smartAssist-home',
@@ -16,7 +18,9 @@ import { SubjectDemo1 } from '../subject-demo1/subject-demo1';
     // EmployeeList
     // ObservableDemo1
     // ObservableDemo2
-    SubjectDemo1
+    // SubjectDemo1
+    // DirectivesDemo
+    UserList
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'

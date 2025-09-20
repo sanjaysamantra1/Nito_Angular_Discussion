@@ -103,3 +103,20 @@
   <div>Custom Directive(NumberOnly)</div>
   <input type="text" smartAssistNumberonly />
 </div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>Need of trackBy</div>
+  <table class="table table-bordered">
+    <tbody>
+      @for (emp of employees; track $index) {
+      <tr>
+        <td>{{emp.eId}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.sal}}</td>
+        <td>{{emp.gender}}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <button (click)="updateEmployees()">add row</button>
+</div>

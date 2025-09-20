@@ -1,0 +1,13 @@
+<h3 class="text-center">User List</h3>
+
+<div class="container">
+  <div class="row">
+    @for (user of usersArr; track $index) {
+      <div class="col">
+        <smartAssist-user-card [user]="user"></smartAssist-user-card>
+      </div>
+    }
+  </div>
+  <button (click)="sayHi()">Click me</button>
+  <button (click)="changeData()" class="mx-2 btn btn-secondary">Click me</button>
+</div>

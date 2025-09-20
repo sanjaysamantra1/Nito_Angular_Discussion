@@ -4,9 +4,7 @@ import { Aboutus } from './components/aboutus/aboutus';
 import { Careers } from './components/careers/careers';
 import { Contactus } from './components/contactus/contactus';
 import { Notfound } from './components/notfound/notfound';
-import { Users } from './components/users/users';
 import { Userdetails } from './components/userdetails/userdetails';
-import { ProductList } from './components/product-list/product-list';
 import { Productdetails } from './components/productdetails/productdetails';
 import { PermanentJobs } from './components/permanent-jobs/permanent-jobs';
 import { ContractJobs } from './components/contract-jobs/contract-jobs';
@@ -32,9 +30,18 @@ export const routes: Routes = [
     component: Contactus,
     canDeactivate: [canExitGuard]
   },
-  { path: 'users', component: Users },
+  {
+    path: 'users',
+    loadComponent: () =>
+      import('./components/users/users').then((x) => x.Users),
+       data: { preload: true }
+  },
   { path: 'userdetails/:id', component: Userdetails },
-  { path: 'products', component: ProductList },
+  {
+    path: 'products',
+    loadComponent: () =>
+      import('./components/product-list/product-list').then((x) => x.ProductList)
+  },
   { path: 'productdetails', component: Productdetails },
   {
     path: 'uploadvideo',
