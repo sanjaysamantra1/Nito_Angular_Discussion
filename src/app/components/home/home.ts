@@ -8,6 +8,7 @@ import { ObservableDemo2 } from '../observable-demo2/observable-demo2';
 import { SubjectDemo1 } from '../subject-demo1/subject-demo1';
 import { DirectivesDemo } from '../directives-demo/directives-demo';
 import { UserList } from '../user-list/user-list';
+import { SignalDemo } from '../signal-demo/signal-demo';
 
 @Component({
   selector: 'smartAssist-home',
@@ -20,7 +21,8 @@ import { UserList } from '../user-list/user-list';
     // ObservableDemo2
     // SubjectDemo1
     // DirectivesDemo
-    UserList
+    // UserList
+    SignalDemo
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'

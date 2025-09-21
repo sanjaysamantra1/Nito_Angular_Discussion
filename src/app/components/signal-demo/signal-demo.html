@@ -1,0 +1,66 @@
+<div class="border border-3 rounded-3 p-3 m-3">
+  <h2>Cookie recipe</h2>
+  <label>
+    # of cookies:
+    <input type="range" min="10" max="100" step="10" [value]="cookieCount()" (input)="update($event)" />
+    {{ cookieCount() }}
+  </label>
+  <p>Butter: {{ butter() }} cup(s)</p>
+  <p>Sugar: {{ sugar() }} cup(s)</p>
+  <p>Flour: {{ flour() }} cup(s)</p>
+</div>
+
+<div class="border border-3 rounded-3 p-3 m-3">
+  <h2>Products Page</h2>
+  <div>price: {{price()}}</div>
+  <select (change)="setQuantity($event)">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+  <h2>Total Amt: {{totalAmt()}}</h2>
+</div>
+
+<div class="border border-3 rounded-3 p-3 m-3">
+  <h3 class="text-center">Signal Demo</h3>
+  <div class="border">
+    <h4>Num value is {{num()}}</h4>
+    <h4>Square value is {{numSquare()}}</h4>
+    <h4>Double value is {{numDouble()}}</h4>
+
+    <button (click)="decrement()">Decrement</button>
+    <button (click)="reset()" class="m-1">Reset</button>
+    <button (click)="increment()">Increment</button>
+    <hr />
+    @for(msg of messages();track $index){
+    <div>{{msg}}</div>
+    }
+  </div>
+</div>
+
+<div class="col-sm-3 offset-3">
+
+  <select (change)="updateUserId($event)">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+  </select>
+  <div class="card">
+    <div class="card-body text-center">
+      <h5 class="card-title">{{userData.id}}</h5>
+      <div class="card-text text-truncate">{{userData.name}}</div>
+      <div class="card-text text-truncate">{{userData.address.city}}</div>
+      <div class="card-text"> {{userData.phone}}</div>
+      <div class="card-text">{{userData.email}}</div>
+    </div>
+  </div>
+</div>
