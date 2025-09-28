@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'smartAssist-contactus',
@@ -28,5 +29,11 @@ export class Contactus {
   submitMyForm(formData: any) {
     console.log(formData);
     this.hasChanges = false;
+  }
+
+  constructor(private sanitizer: DomSanitizer) {
+  }
+  sanitizeMyHTML(html: string) {
+    return this.sanitizer.bypassSecurityTrustHtml(html)
   }
 }

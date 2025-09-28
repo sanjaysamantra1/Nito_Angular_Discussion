@@ -1,0 +1,9 @@
+<h3 class="text-center">Counter App using NgRx</h3>
+
+<div class="col-sm-4 offset-4 border border-3 rounded-3 p-3 text-center">
+  <h4>Count: {{ count$ | async}}</h4>
+
+  <button class="btn btn-secondary mx-1" (click)="decrementCount()">Decrement</button>
+  <button class="btn btn-danger mx-1" (click)="resetCount()">Reset</button>
+  <button class="btn btn-primary mx-1" (click)="incrementCount()">Increment</button>
+</div>

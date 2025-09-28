@@ -9,6 +9,7 @@ import { SubjectDemo1 } from '../subject-demo1/subject-demo1';
 import { DirectivesDemo } from '../directives-demo/directives-demo';
 import { UserList } from '../user-list/user-list';
 import { SignalDemo } from '../signal-demo/signal-demo';
+import { Counter } from '../counter/counter';
 
 @Component({
   selector: 'smartAssist-home',
@@ -22,7 +23,8 @@ import { SignalDemo } from '../signal-demo/signal-demo';
     // SubjectDemo1
     // DirectivesDemo
     // UserList
-    SignalDemo
+    // SignalDemo
+    Counter
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'
