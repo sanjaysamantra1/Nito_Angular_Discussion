@@ -1,0 +1,27 @@
+<h3 class="text-center">Employee CRUD using NgRx</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <table class="table bordered table-striped">
+        <tbody>
+          @for (emp of employees$ | async; track $index) {
+          <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.firstName}}</td>
+            <td>{{emp.lastName}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.sal}}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteEmp(emp.id)">Delete</button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-4">
+      Add EMployee
+    </div>
+  </div>
+</div>

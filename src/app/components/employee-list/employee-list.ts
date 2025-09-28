@@ -12,9 +12,9 @@ export class EmployeeList {
   empArr: any = [];
 
   ngOnInit() {
-    this.employeeService.getAllEmployees().subscribe(response => {
+    /* this.employeeService.getAllEmployees().subscribe(response => {
       this.empArr = response;
       console.log(response);
-    })
+    }) */
   }
 }
