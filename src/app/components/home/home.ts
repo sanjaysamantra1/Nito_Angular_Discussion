@@ -10,6 +10,7 @@ import { DirectivesDemo } from '../directives-demo/directives-demo';
 import { UserList } from '../user-list/user-list';
 import { SignalDemo } from '../signal-demo/signal-demo';
 import { Counter } from '../counter/counter';
+import { TodoCrud } from '../todo-crud/todo-crud';
 
 @Component({
   selector: 'smartAssist-home',
@@ -24,7 +25,8 @@ import { Counter } from '../counter/counter';
     // DirectivesDemo
     // UserList
     // SignalDemo
-    Counter
+    // Counter
+    TodoCrud
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'
